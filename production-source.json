@@ -1,0 +1,10 @@
+{
+  "application": "BarLive",
+  "productionSource": "JorgitoPN/Barlive-2",
+  "productionBranch": "main",
+  "legacyGhPages": false,
+  "purpose": "Deployment provenance sentinel",
+  "productionCommit": "3da3f3a36d451faae52b9692692864b62cd9e566",
+  "mapSnapshotSha256": "d1ecfca1bac73c326ed45e0ebbcbab5294a284e80bc8c6bd44d0a3dbfff8fc37",
+  "builtAt": "2026-10-17T17:23:07.188Z"
+}

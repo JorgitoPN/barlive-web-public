@@ -1,0 +1,65 @@
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: font/ttf
+
+/_expo/static/*
+  ! Cache-Control
+  # Never cache an SPA fallback as an immutable JavaScript bundle while a new
+  # Pages deployment is still propagating. Browsers retain the hashed file and
+  # revalidate it cheaply instead of getting stuck on HTML for a full year.
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/map-data/hybrid-mvt-v1/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/map-data/viewport-z9-v1/*
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/map-data/national-venues-v1.json
+  ! Cache-Control
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/map-data/national-venues-v2.json
+  ! Cache-Control
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/map-data/*
+  ! Cache-Control
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# Tile URLs include a snapshot digest: browser and CDN can cache these
+# immutably. The unversioned manifests remain fresh to pick up new snapshots.
+/map-data/hybrid-mvt-v2/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/x-protobuf
+
+/map-data/hybrid-mvt-v2/manifest.json
+  ! Cache-Control
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+  ! Content-Type
+  Content-Type: application/json
+
+/map-data/viewport-z9-v2/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/map-data/viewport-z9-v2/manifest.json
+  ! Cache-Control
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/sw.js
+  ! Cache-Control
+  Cache-Control: no-cache, no-store, must-revalidate
